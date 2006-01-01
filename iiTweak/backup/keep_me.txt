@@ -1,0 +1,2 @@
+This directory is required for the weidu (un)installation process.
+Do not delete it.

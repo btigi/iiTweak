@@ -1,0 +1,220 @@
+/* ------------------------------------------------------------------------------------------------------------------------
+// Name:   iiTweak
+// Author: igi
+// Date:   9/10/04
+// -----------------------------------------------------------------------------------------------------------------------*/
+BACKUP ~iiTweak/backup~
+AUTHOR ~igi~
+ASK_EVERY_COMPONENT
+LANGUAGE ~English~ ~English~ ~iiTweak/English/setup.tra~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// No exclusion schools
+BEGIN @1
+
+COPY_EXISTING_REGEXP GLOB ~.*\.spl~ ~override~
+  WRITE_SHORT 0x1e 00
+
+// ------------------------------------------------------------------------------------------------------------------------
+// No Item Exclusion
+BEGIN @2
+
+  COPY ~iiTweak/2da/itemexcl.2da~ ~override/itemexcl.2da~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Equal starting gold
+BEGIN @3
+
+  COPY ~iiTweak/2da/strtgold.2da~ ~override/strtgold.2da~
+ 
+// ------------------------------------------------------------------------------------------------------------------------
+// Raise Dead cost
+BEGIN @4
+
+  COPY ~iiTweak/2da/raisdead.2da~ ~override/raisdead.2da~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// abclasrq.2da
+BEGIN @5
+
+  COPY ~iitweak/2da/abclasrq.2da~ ~override~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// abclsmod.2da
+BEGIN @6
+  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~abclsmod.2da~ ~BG2/IWD2 only component~
+
+    COPY ~iitweak/2da/abclsmod.2da~ ~override~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// abdcdsrq.2da
+BEGIN @7
+
+    COPY ~iitweak/2da/abdcdsrq.2da~ ~override~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// abdcscrq.2da
+BEGIN @8
+
+    COPY ~iitweak/2da/abdcscrq.2da~ ~override~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// abracead.2da
+BEGIN @9
+
+    COPY ~iitweak/2da/abracead.2da~ ~override~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// abracerq.2da
+BEGIN @10
+
+    COPY ~iitweak/2da/abracerq.2da~ ~override~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// alignmnt.2da
+BEGIN @11
+
+    COPY ~iitweak/2da/alignmnt.2da~ ~override~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// 0 XP Tasks awards - Lock Picking
+BEGIN @12
+  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~xpbonus.2da~ ~BG2 only component~
+
+  COPY_EXISTING ~xpbonus.2da~ ~override~
+    SET_2DA_ENTRY 2 0 1 ~remove_this 1~
+    SET_2DA_ENTRY 3 1 1 ~0~
+    SET_2DA_ENTRY 3 2 1 ~0~
+    SET_2DA_ENTRY 3 3 1 ~0~
+    SET_2DA_ENTRY 3 4 1 ~0~
+    SET_2DA_ENTRY 3 5 1 ~0~
+    SET_2DA_ENTRY 3 6 1 ~0~
+    SET_2DA_ENTRY 3 7 1 ~0~
+    SET_2DA_ENTRY 3 8 1 ~0~
+    SET_2DA_ENTRY 3 9 1 ~0~
+    SET_2DA_ENTRY 3 10 1 ~0~
+    SET_2DA_ENTRY 3 11 1 ~0~
+    SET_2DA_ENTRY 3 12 1 ~0~
+    SET_2DA_ENTRY 3 13 1 ~0~
+    SET_2DA_ENTRY 3 14 1 ~0~
+    SET_2DA_ENTRY 3 15 1 ~0~
+    SET_2DA_ENTRY 3 16 1 ~0~
+    SET_2DA_ENTRY 3 17 1 ~0~
+    SET_2DA_ENTRY 3 18 1 ~0~
+    SET_2DA_ENTRY 3 19 1 ~0~
+    SET_2DA_ENTRY 3 20 1 ~0~
+    SET_2DA_ENTRY 3 21 1 ~0~
+    SET_2DA_ENTRY 3 22 1 ~0~
+    SET_2DA_ENTRY 3 23 1 ~0~
+    SET_2DA_ENTRY 3 24 1 ~0~
+    SET_2DA_ENTRY 3 25 1 ~0~
+    SET_2DA_ENTRY 3 26 1 ~0~
+    SET_2DA_ENTRY 3 27 1 ~0~
+    SET_2DA_ENTRY 3 28 1 ~0~
+    SET_2DA_ENTRY 3 29 1 ~0~
+    SET_2DA_ENTRY 3 30 1 ~0~
+    SET_2DA_ENTRY 3 31 1 ~0~
+    SET_2DA_ENTRY 3 32 1 ~0~
+    SET_2DA_ENTRY 3 33 1 ~0~
+    SET_2DA_ENTRY 3 34 1 ~0~
+    SET_2DA_ENTRY 3 35 1 ~0~
+    SET_2DA_ENTRY 3 36 1 ~0~
+    SET_2DA_ENTRY 3 37 1 ~0~
+    SET_2DA_ENTRY 3 38 1 ~0~
+    SET_2DA_ENTRY 3 39 1 ~0~
+    SET_2DA_ENTRY 3 40 1 ~0~
+
+    SET_2DA_ENTRY 2 0 1 ~~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// 0 XP Tasks awards - Disarm Traps
+BEGIN @13
+  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~xpbonus.2da~ ~BG2 only component~
+
+  COPY_EXISTING ~xpbonus.2da~ ~override~
+    SET_2DA_ENTRY 2 0 1 ~remove_this 1~
+    SET_2DA_ENTRY 4 1 1 ~0~
+    SET_2DA_ENTRY 4 2 1 ~0~
+    SET_2DA_ENTRY 4 3 1 ~0~
+    SET_2DA_ENTRY 4 4 1 ~0~
+    SET_2DA_ENTRY 4 5 1 ~0~
+    SET_2DA_ENTRY 4 6 1 ~0~
+    SET_2DA_ENTRY 4 7 1 ~0~
+    SET_2DA_ENTRY 4 8 1 ~0~
+    SET_2DA_ENTRY 4 9 1 ~0~
+    SET_2DA_ENTRY 4 10 1 ~0~
+    SET_2DA_ENTRY 4 11 1 ~0~
+    SET_2DA_ENTRY 4 12 1 ~0~
+    SET_2DA_ENTRY 4 13 1 ~0~
+    SET_2DA_ENTRY 4 14 1 ~0~
+    SET_2DA_ENTRY 4 15 1 ~0~
+    SET_2DA_ENTRY 4 16 1 ~0~
+    SET_2DA_ENTRY 4 17 1 ~0~
+    SET_2DA_ENTRY 4 18 1 ~0~
+    SET_2DA_ENTRY 4 19 1 ~0~
+    SET_2DA_ENTRY 4 20 1 ~0~
+    SET_2DA_ENTRY 4 21 1 ~0~
+    SET_2DA_ENTRY 4 22 1 ~0~
+    SET_2DA_ENTRY 4 23 1 ~0~
+    SET_2DA_ENTRY 4 24 1 ~0~
+    SET_2DA_ENTRY 4 25 1 ~0~
+    SET_2DA_ENTRY 4 26 1 ~0~
+    SET_2DA_ENTRY 4 27 1 ~0~
+    SET_2DA_ENTRY 4 28 1 ~0~
+    SET_2DA_ENTRY 4 29 1 ~0~
+    SET_2DA_ENTRY 4 30 1 ~0~
+    SET_2DA_ENTRY 4 31 1 ~0~
+    SET_2DA_ENTRY 4 32 1 ~0~
+    SET_2DA_ENTRY 4 33 1 ~0~
+    SET_2DA_ENTRY 4 34 1 ~0~
+    SET_2DA_ENTRY 4 35 1 ~0~
+    SET_2DA_ENTRY 4 36 1 ~0~
+    SET_2DA_ENTRY 4 37 1 ~0~
+    SET_2DA_ENTRY 4 38 1 ~0~
+    SET_2DA_ENTRY 4 39 1 ~0~
+    SET_2DA_ENTRY 4 40 1 ~0~
+
+    SET_2DA_ENTRY 2 0 1 ~~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// 0 XP Tasks awards - Learn Spells
+BEGIN @14
+  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~xpbonus.2da~ ~BG2 only component~
+  // learn spell - can only learn to lvl 9
+  COPY_EXISTING ~xpbonus.2da~ ~override~
+    SET_2DA_ENTRY 2 0 1 ~remove_this 1~
+    SET_2DA_ENTRY 5 1 1 ~0~
+    SET_2DA_ENTRY 5 2 1 ~0~
+    SET_2DA_ENTRY 5 3 1 ~0~
+    SET_2DA_ENTRY 5 4 1 ~0~
+    SET_2DA_ENTRY 5 5 1 ~0~
+    SET_2DA_ENTRY 5 6 1 ~0~
+    SET_2DA_ENTRY 5 7 1 ~0~
+    SET_2DA_ENTRY 5 8 1 ~0~
+    SET_2DA_ENTRY 5 9 1 ~0~
+
+    SET_2DA_ENTRY 2 0 1 ~~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Restored maze spell
+BEGIN @15
+  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~intmod.2da~ ~BG2 only component~
+
+  COPY_EXISTING ~intmod.2da~ ~override~
+  SET_2DA_ENTRY 2 0 1 ~remove_this LEARN_SPELL~
+  // 0,1,2 = 2d4
+    SET_2DA_ENTRY 3 4 1 ~2~
+    SET_2DA_ENTRY 4 4 1 ~2~
+    SET_2DA_ENTRY 5 4 1 ~2~
+
+  // 3,4,5 = 1d4
+    SET_2DA_ENTRY 6 4 1 ~1~
+    SET_2DA_ENTRY 7 4 1 ~1~
+    SET_2DA_ENTRY 8 4 1 ~1~
+
+  // 6,7,8 = 5d4
+    SET_2DA_ENTRY 9 4 1 ~5~
+    SET_2DA_ENTRY 10 4 1 ~5~
+    SET_2DA_ENTRY 11 4 1 ~5~
+  
+    SET_2DA_ENTRY 2 0 1 ~~

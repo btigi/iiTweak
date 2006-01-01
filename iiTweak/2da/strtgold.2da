@@ -1,0 +1,21 @@
+2DA V1.0
+0
+                        SIDES   ROLLS   MODIFIER    MULTIPLIER
+MAGE                    4       5       1           10
+FIGHTER                 4       5       1           10
+CLERIC                  4       5       1           10
+THIEF                   4       5       1           10
+BARD                    4       5       1           10
+PALADIN                 4       5       1           10
+DRUID                   4       5       1           10
+RANGER                  4       5       1           10
+FIGHTER_MAGE            4       5       1           10
+FIGHTER_CLERIC          4       5       1           10
+FIGHTER_THIEF           4       5       1           10
+FIGHTER_MAGE_THIEF      4       5       1           10
+MAGE_THIEF              4       5       1           10
+CLERIC_MAGE             4       5       1           10
+CLERIC_THIEF            4       5       1           10
+FIGHTER_DRUID           4       5       1           10
+FIGHTER_MAGE_CLERIC     4       5       1           10
+CLERIC_RANGER           4       5       1           10
