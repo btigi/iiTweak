@@ -218,3 +218,23 @@ BEGIN @15
     SET_2DA_ENTRY 11 4 1 ~5~
   
     SET_2DA_ENTRY 2 0 1 ~~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// No Item Stat Requirements
+BEGIN @16
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
+  WRITE_BYTE 0x24 0 // Level
+  WRITE_BYTE 0x26 0 // Strength
+  WRITE_BYTE 0x28 0 // Strength Bonus
+  WRITE_BYTE 0x2a 0 // Intelligence
+  WRITE_BYTE 0x2c 0 // Dexterity
+  WRITE_BYTE 0x2e 0 // Wisdom
+  WRITE_BYTE 0x30 0 // Constitution
+  WRITE_BYTE 0x32 0 // Charisma
+  BUT_ONLY_IF_IT_CHANGES
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Fully Explored Areas
+BEGIN @17
+  EXTEND_TOP ~dplayer3.bcs~ ~iitweak/baf/explore.baf~
+  EXTEND_TOP ~dplayer2.bcs~ ~iitweak/baf/explore.baf~

@@ -38,7 +38,7 @@ D) Raise Dead cost
 E) No Class Requirements
       This component removes the class stat requirements (e.g. Bards required 12 DEX, 13 INT and 15 CHA).
 
-F) No Class Modifiers
+F) No Class Modifiers [BG2/IWD2]
       This component removes the stat modifiers gained for being a particular class (e.g. Beastmasters suffered -2 STR and -2 CON).
 
 G) No Resultant Dual-Class Requirements
@@ -56,17 +56,23 @@ J) No Racial Requirements
 K) No Class Alignment Restrictions
       This component removes class alignment restrictions.
 
-L) 0 XP Task Awards - Lock Picking
+L) 0 XP Task Awards - Lock Picking [BG2]
       This component will set the XP thieves gain for picking locks to 0.
 
-M) 0 XP Task Awards - Disarm Traps
+M) 0 XP Task Awards - Disarm Traps [BG2]
       This component will set the XP thieves gain for disarming traps to 0.
 
-N) 0 XP Task Awards - Learn Spells
+N) 0 XP Task Awards - Learn Spells [BG2]
       This component will set the XP mages gain for scribing scrolls to 0.
 
-O) Restored Maze Spell
+O) Restored Maze Spell [BG2]
       The game manual, and the in-game description of the effects of the Maze spell differ from the rules (possibly) implemented by the game. This component restores the Maze spell to use the settings referred to by the description and manual.
+
+P) No Item Stat Requirements
+      This component removes the stat requirements from all items (e.g. Bastard Swords required 11 Strength).
+
+Q) Fully Explored Areas
+      This component reveals areas as soon as the Player enters them. Note that the area is explored, but the Fog Of War remains.
 
 +) Section 4. Known Issues
 ==========================
@@ -80,7 +86,7 @@ iiTweak would have taken a lot longer to produce without:
 
   + IESDP - http://iesdp.gibberlings3.net/
 
-  + WeiDu - http://www.weidu.org
+  + WeiDU - http://www.weidu.org
 
 Special thanks to Westly Weimer, for implementing WeiDU feature requests.
 

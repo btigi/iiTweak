@@ -1,0 +1,7 @@
+IF
+  Global("iiExplored","MYAREA",0)
+THEN
+  RESPONSE #100
+    Explore()
+    SetGlobal("iiExplored","MYAREA",1)
+END
