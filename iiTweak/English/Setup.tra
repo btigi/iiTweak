@@ -15,3 +15,12 @@
 @15 = ~Restored Maze Spell~
 @16 = ~No Item Stat Requirements~
 @17 = ~Fully Explored Areas~
+@18 = ~Zero Weight Items~
+@19 = ~Remove Cursed Item Flag (remove information string)~
+@20 = ~Remove Cursed Item Flag (maintain information string)~
+@21 = ~CursedFlagGroup~
+@22 = ~Cursed item equipped~
+
+@100 = ~View Readme~
+@101 = ~Show readme after installation~
+@102 = ~Do not show readme after installation~

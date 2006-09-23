@@ -1,24 +1,27 @@
-iiTweak 3.00
+iiTweak 5.00
 ------------
 
 +) Contents
 ===========
 1.    About
 2.    (Un)Installation
-3.    Usage
+3.    Components
 4.    Known Issues
-5.    Thanks to
-6.    Contact Details
+5.    Version History
+6.    Thanks to
+7.    Contact Details
 
 +) Section 1. About
 ===================
   iiTweak is a small collection of tweaks for the Infinity Engine games - all games are catered for from a single tweak-pack, and *only tweaks which will affect the target game will be offered for installation*. The tweaks have not been extensively tested, but they all should work. Bear in mind that some of the tweaks could radically alter the game, possibly ruining game-balance if used irresponibly. If you dont like a tweak, simply uninstall it.
+
 
 +) Section 2. (un)Installation
 ==============================
   To install, simply unzip the archive, named in the form iiTweak(xx).zip [where (xx) represents the release version], to the main game directory (i.e. where you installed BG1,BG2,IWD1 or IWD2), run the  Setup-iiTweak.exe file, and follow the prompts.
 
   To uninstall, simply run the Setup-iiTweak.exe file and follow the prompts (choosing the Uninstall option).
+
 
 +) Section 3. Components
 ========================
@@ -72,7 +75,14 @@ P) No Item Stat Requirements
       This component removes the stat requirements from all items (e.g. Bastard Swords required 11 Strength).
 
 Q) Fully Explored Areas
-      This component reveals areas as soon as the Player enters them. Note that the area is explored, but the Fog Of War remains.
+      This component reveals areas as soon as the Player enters them. Note that the area is explored, but the Fog Of War remains. This component requires Party AI to be switched on to function.
+
+R) Zero Weight Items
+      This component sets all items to have a weight of zero.
+
+S) Remove Cursed Item Flag
+      This component removes the cursed flag from any cursed items. This does not prevent or remove any negative effects of a cursed item, but does remove the requirement that a 'Remove Curse' spell be cast on the affected player to remove the item. The component also removes the "item cursed" text that appears when a cursed item is equipped - this text can optionally be reproduced in the main game screen (as opposed to the inventory screen).
+
 
 +) Section 4. Known Issues
 ==========================
@@ -80,19 +90,24 @@ It is unknown if/how the tweaks will affect Planescape: Torment.
 
 If you find any errors, please let me know immediately, specifying as much as you can about your problem.
 
-+) Section 5. Thanks to
+
++) Section 5. Version History
+=============================
+V5 [24/09/2006]
+  - Added Zero Weight Items
+  - Added Remove Cursed Item Flag
+
+
++) Section 6. Thanks to
 =======================
 iiTweak would have taken a lot longer to produce without:
-
   + IESDP - http://iesdp.gibberlings3.net/
-
   + WeiDU - http://www.weidu.org
 
-Special thanks to Westly Weimer, for implementing WeiDU feature requests.
 
-+) Section 6. Contact Details
++) Section 7. Contact Details
 =============================
-iiTweak was created by igi / bt_igi (Marc Wrench)
-eMail: igi@mcwrench.com
-Forum: www.mcwrench.com/forums
-W-W-W: www.mcwrench.com/ie/mods/iiTweak
+Feedback, comments, queries, questions and suggestion should be sent to bt_igi / igi (Marc Wrench)
+E-mail: igi@mcwrench.com
+WWW   : http://www.teambg.eu
+WWW   : http://www.mcwrench.com

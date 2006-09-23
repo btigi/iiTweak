@@ -1,12 +1,30 @@
 /* ------------------------------------------------------------------------------------------------------------------------
 // Name:   iiTweak
 // Author: igi
-// Date:   9/10/04
+// Date:   24/09/06
 // -----------------------------------------------------------------------------------------------------------------------*/
 BACKUP ~iiTweak/backup~
 AUTHOR ~igi~
 ASK_EVERY_COMPONENT
 LANGUAGE ~English~ ~English~ ~iiTweak/English/setup.tra~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Readme stuff
+// Some people like to view the readme
+BEGIN @101
+NO_LOG_RECORD
+DESIGNATED 1000
+SUBCOMPONENT @100
+  AT_INTERACTIVE_EXIT ~VIEW iiTweak/Readme-iiTweak.txt~
+
+
+// And some people don't like to view the readme
+BEGIN @102
+DESIGNATED 2000
+NO_LOG_RECORD
+SUBCOMPONENT @100
+// Do nothing
+
 
 // ------------------------------------------------------------------------------------------------------------------------
 // No exclusion schools
@@ -238,3 +256,72 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
 BEGIN @17
   EXTEND_TOP ~dplayer3.bcs~ ~iitweak/baf/explore.baf~
   EXTEND_TOP ~dplayer2.bcs~ ~iitweak/baf/explore.baf~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Zero Weight Items
+BEGIN @18
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
+  WRITE_LONG 0x4c 0 // Weight
+  BUT_ONLY_IF_IT_CHANGES
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Remove Cursed Item Flag - no warning string
+BEGIN @19
+SUBCOMPONENT @21
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
+    PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+      READ_BYTE 0x18 "item_cursed"
+
+      PATCH_IF ((%item_cursed% BAND 0b00010000) != "0b00000000") BEGIN
+        WRITE_BYTE 0x18 (%item_cursed% BAND 0b11101111)  // unset cursed flag
+      END
+    END
+    IF ~ITM~
+  BUT_ONLY_IF_IT_CHANGES
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Remove Cursed Item Flag - warning string
+BEGIN @20
+SUBCOMPONENT @21
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
+    PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+      READ_BYTE 0x18 "item_cursed"
+
+      PATCH_IF ((%item_cursed% BAND 0b00010000) != "0b00000000") BEGIN
+        READ_LONG  0x64 "abilitiesoffset"
+        READ_LONG  0x6a "effectsoffset"
+        READ_SHORT 0x68 "#abilities"
+        READ_SHORT 0x70 "#globaleffects"
+
+        WRITE_BYTE 0x18 (%item_cursed% BAND 0b11101111)  // unset cursed flag
+
+        // Add Equipping Effect: Display String
+        INSERT_BYTES "%effectsoffset%" 0x30
+           WRITE_SHORT "%effectsoffset%" 139           // Type       Display String
+           SAY("%effectsoffset%" + 0x04) @22           // Strref
+           WRITE_BYTE ("%effectsoffset%" +0xc) 1       // Timing Mode (Permananet/Instant)
+        WRITE_SHORT 0x70 ("%#globaleffects%" + 1)
+        SET "#globaleffects" = ("%#globaleffects%" + 1)
+      
+        // Update Any Abilities' Effects Indexes
+        SET "ability#" = 0
+        SET "total#effects" = "%#globaleffects%"
+        WHILE ("%ability#%" < "%#abilities%") BEGIN
+           READ_SHORT ("%abilitiesoffset%" + "%ability#%" * 0x38 + 0x1e) "#effects"
+           WRITE_SHORT ("%abilitiesoffset%" + "%ability#%" * 0x38 + 0x20) "%total#effects%"
+           SET "total#effects" = ("%total#effects%" + "%#effects%")
+        SET "ability#" = ("%ability#%" + 1)
+        END
+      
+        // Set Common Effect Values
+        WHILE ("%#globaleffects%" > 0)
+        BEGIN
+           WRITE_BYTE ("%effectsoffset%" + ("%#globaleffects%" - 1) * 0x30 + 0x02) 1   // Target self
+           WRITE_BYTE ("%effectsoffset%" + ("%#globaleffects%" - 1) * 0x30 + 0x0d) 0   // Dispel/Resistance
+           WRITE_BYTE ("%effectsoffset%" + ("%#globaleffects%" - 1) * 0x30 + 0x12) 100 // Probability
+        SET "#globaleffects" = ("%#globaleffects%" - 1)
+        END
+      END
+    END
+    IF ~ITM~
+  BUT_ONLY_IF_IT_CHANGES
