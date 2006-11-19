@@ -18,7 +18,7 @@
 @18 = ~Zero Weight Items~
 @19 = ~Remove Cursed Item Flag (remove information string)~
 @20 = ~Remove Cursed Item Flag (maintain information string)~
-@21 = ~CursedFlagGroup~
+@21 = ~Cursed Item Tweak~
 @22 = ~Cursed item equipped~
 
 @100 = ~View Readme~

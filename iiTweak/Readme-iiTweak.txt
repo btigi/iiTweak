@@ -1,4 +1,4 @@
-iiTweak 5.00
+iiTweak 6.00
 ------------
 
 +) Contents
@@ -33,7 +33,7 @@ B) No Item Exclusion
       This component removes the restriction of wearing similar items (e.g. with this component it is possible to wear two Rings of Protection +1).
 
 C) Equal Starting Gold
-      This component gives all classes an equal chance of starting the game with the same amount of gold. The amount of gold given to the player is dictated bythe formula (5d4 +1) *10.
+      This component gives all classes an equal chance of starting the game with the same amount of gold. The amount of gold given to the player is dictated by the formula (5d4 +1) *10.
 
 D) Raise Dead cost
       This component alters the cost of the "Raise Dead" spell at Temples. The cost of raising someone is now 1000 * the dead characters level (e.g. 1000gp for a level 1 character and 40,000gp for a level 40 character).
@@ -93,9 +93,11 @@ If you find any errors, please let me know immediately, specifying as much as yo
 
 +) Section 5. Version History
 =============================
-V5 [24/09/2006]
+V5 [19/11/2006]
   - Added Zero Weight Items
   - Added Remove Cursed Item Flag
+  - Updated to WeiDU 197
+  - Added filesize checking for 'Zero Weight Items' and 'No Item Stat Requirements' components
 
 
 +) Section 6. Thanks to
