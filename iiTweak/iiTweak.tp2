@@ -8,6 +8,7 @@ AUTHOR ~igi~
 ASK_EVERY_COMPONENT
 LANGUAGE ~English~ ~English~ ~iiTweak/English/setup.tra~
 
+
 // ------------------------------------------------------------------------------------------------------------------------
 // Readme stuff
 // Some people like to view the readme
@@ -328,4 +329,95 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
       END
     END
     IF ~ITM~
+  BUT_ONLY_IF_IT_CHANGES
+
+// ------------------------------------------------------------------------------------------------------------------------
+// All stores buy stolen goods
+BEGIN @23
+  COPY_EXISTING_REGEXP GLOB ~.*\.sto~ ~override~
+    PATCH_IF (SOURCE_SIZE > 0x74) THEN
+    BEGIN
+      READ_BYTE  0x11 "flags"
+      WRITE_BYTE 0x11 ("%flags%" BOR 0b00010000)
+    END
+  BUT_ONLY_IF_IT_CHANGES
+
+// ------------------------------------------------------------------------------------------------------------------------
+// All stores buy all item types
+BEGIN @24
+  COPY_EXISTING_REGEXP GLOB ~.*\.sto~ ~override~
+    PATCH_IF (SOURCE_SIZE > 0x74) THEN
+    BEGIN
+      SET presetcount = 73
+      WHILE (0 < %presetcount%)
+      BEGIN
+        SET $itemtypearray("%presetcount%") = 0
+        SET %presetcount% = %presetcount% - 1
+      END
+
+
+      READ_LONG  0x2c "offset"
+      READ_LONG  0x30 "actualcount"
+
+      READ_LONG  0x34 "itemsoldoffset"
+      READ_LONG  0x4c "drinksoldoffset"
+      READ_LONG  0x70 "spellsoldoffset"
+
+      SET count = actualcount
+
+      // According to the IESDP, there are 73 (potentially) valid item-types
+      PATCH_IF (%count% !=  73) THEN
+      BEGIN
+        WHILE (0 < %count%)
+        BEGIN
+          READ_LONG (%offset% + ((%count% -1) * 4)) itemtype
+          // read the current item-types bought, and set the array element for each one
+          SET $itemtypearray("%itemtype%") = 1
+          SET %count% = %count% - 1
+        END
+      END
+
+      SET addeditemtypes = 0
+      SET %count% = 73
+      WHILE (0 < %count%)
+      BEGIN
+        // for each array element not set (i.e. each item-type not bought)
+        PATCH_IF ($itemtypearray("%count%") = 0) THEN
+        BEGIN
+        PATCH_PRINT "not set %count%"
+          //%count% is not set - we need to add it to the file
+          INSERT_BYTES %offset% 4
+          WRITE_LONG %offset% %count%
+          SET actualcount = actualcount + 1
+          SET addeditemtypes = addeditemtypes + 1
+        END
+
+        SET %count% = %count% - 1
+      END
+
+      // if another struct comes after the item-types, we need to update the offset to it
+      PATCH_IF (offset < itemsoldoffset) THEN
+      BEGIN
+        SET itemsoldoffset = itemsoldoffset + (addeditemtypes * 4)
+      END
+
+      // if another struct comes after the item-types, we need to update the offset to it      
+      PATCH_IF (offset < drinksoldoffset) THEN
+      BEGIN
+        SET drinksoldoffset = itemsoldoffset + (addeditemtypes * 4)
+      END
+      
+      // if another struct comes after the item-types, we need to update the offset to it
+      PATCH_IF (offset < spellsoldoffset) THEN
+      BEGIN
+        SET spellsoldoffset = itemsoldoffset + (addeditemtypes * 4)
+      END
+
+      WRITE_LONG  0x34 itemsoldoffset
+      WRITE_LONG  0x4c drinksoldoffset
+      WRITE_LONG  0x70 spellsoldoffset
+
+      WRITE_LONG  0x30 actualcount
+
+    END
   BUT_ONLY_IF_IT_CHANGES

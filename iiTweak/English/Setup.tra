@@ -20,6 +20,8 @@
 @20 = ~Remove Cursed Item Flag (maintain information string)~
 @21 = ~Cursed Item Tweak~
 @22 = ~Cursed item equipped~
+@23 = ~All stores buy stolen goods~
+@24 = ~All stores buy all item types~
 
 @100 = ~View Readme~
 @101 = ~Show readme after installation~

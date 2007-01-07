@@ -1,4 +1,4 @@
-iiTweak 6.00
+iiTweak 7.00
 ------------
 
 +) Contents
@@ -83,6 +83,12 @@ R) Zero Weight Items
 S) Remove Cursed Item Flag
       This component removes the cursed flag from any cursed items. This does not prevent or remove any negative effects of a cursed item, but does remove the requirement that a 'Remove Curse' spell be cast on the affected player to remove the item. The component also removes the "item cursed" text that appears when a cursed item is equipped - this text can optionally be reproduced in the main game screen (as opposed to the inventory screen).
 
+T) All stores buy stolen goods
+      This component simply ensures that all store keepers will buy goods marked as stolen.
+
+U) All stores buy all item types
+      This component ensures that all store keepers will buy good of all types (this affects container items too).
+
 
 +) Section 4. Known Issues
 ==========================
@@ -93,7 +99,11 @@ If you find any errors, please let me know immediately, specifying as much as yo
 
 +) Section 5. Version History
 =============================
-V5 [19/11/2006]
+V7 [07/01/2007]
+  - Added 'All stores buy stolen goods' component
+  - Added 'All stores buy all item types' component
+
+V6 [19/11/2006]
   - Added Zero Weight Items
   - Added Remove Cursed Item Flag
   - Updated to WeiDU 197
