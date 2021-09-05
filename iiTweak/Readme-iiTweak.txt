@@ -1,5 +1,5 @@
-iiTweak 7.00
-------------
+iiTweak 7.1
+-----------
 
 +) Contents
 ===========
@@ -99,6 +99,9 @@ If you find any errors, please let me know immediately, specifying as much as yo
 
 +) Section 5. Version History
 =============================
+V7.1 [05/09/2021]
+ - Maintenace release RE: mod packaging
+
 V7 [07/01/2007]
   - Added 'All stores buy stolen goods' component
   - Added 'All stores buy all item types' component
