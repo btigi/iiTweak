@@ -4,9 +4,10 @@
 // -----------------------------------------------------------------------------------------------------------------------*/
 BACKUP ~iiTweak/backup~
 AUTHOR ~igi~
-VERSION ~7.1~
+VERSION ~8.1~
 ASK_EVERY_COMPONENT
-LANGUAGE ~English~ ~English~ ~iiTweak/English/setup.tra~
+LANGUAGE ~English~ ~English~ ~iiTweak/Languages/English/setup.tra~
+LANGUAGE ~Spanish~ ~Spanish~ ~iiTweak/Languages/Spanish/setup.tra~
 
 
 // ------------------------------------------------------------------------------------------------------------------------
@@ -61,7 +62,7 @@ BEGIN @5
 // ------------------------------------------------------------------------------------------------------------------------
 // abclsmod.2da
 BEGIN @6
-  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~abclsmod.2da~ ~BG2/IWD2 only component~
+  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~abclsmod.2da~ @1000
 
     COPY ~iitweak/2da/abclsmod.2da~ ~override~
 
@@ -98,7 +99,7 @@ BEGIN @11
 // ------------------------------------------------------------------------------------------------------------------------
 // 0 XP Tasks awards - Lock Picking
 BEGIN @12
-  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~xpbonus.2da~ ~BG2 only component~
+  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~xpbonus.2da~ @1000
 
   COPY_EXISTING ~xpbonus.2da~ ~override~
     SET_2DA_ENTRY 2 0 1 ~remove_this 1~
@@ -148,7 +149,7 @@ BEGIN @12
 // ------------------------------------------------------------------------------------------------------------------------
 // 0 XP Tasks awards - Disarm Traps
 BEGIN @13
-  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~xpbonus.2da~ ~BG2 only component~
+  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~xpbonus.2da~ @1000
 
   COPY_EXISTING ~xpbonus.2da~ ~override~
     SET_2DA_ENTRY 2 0 1 ~remove_this 1~
@@ -198,7 +199,7 @@ BEGIN @13
 // ------------------------------------------------------------------------------------------------------------------------
 // 0 XP Tasks awards - Learn Spells
 BEGIN @14
-  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~xpbonus.2da~ ~BG2 only component~
+  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~xpbonus.2da~ @1000
   // learn spell - can only learn to lvl 9
   COPY_EXISTING ~xpbonus.2da~ ~override~
     SET_2DA_ENTRY 2 0 1 ~remove_this 1~
@@ -217,7 +218,7 @@ BEGIN @14
 // ------------------------------------------------------------------------------------------------------------------------
 // Restored maze spell
 BEGIN @15
-  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~intmod.2da~ ~BG2 only component~
+  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~intmod.2da~ @1000
 
   COPY_EXISTING ~intmod.2da~ ~override~
   SET_2DA_ENTRY 2 0 1 ~remove_this LEARN_SPELL~
@@ -421,3 +422,45 @@ BEGIN @24
 
     END
   BUT_ONLY_IF_IT_CHANGES
+
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Remove effects of intoxication
+BEGIN @25
+
+  COPY ~iiTweak/2da/intoxmod.2da~ ~override/intoxmod.2da~
+
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Remove effects of luck
+BEGIN @26
+
+  COPY ~iiTweak/2da/fatigmod.2da~ ~override/fatigmod.2da~
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Remove effects of dexterity
+BEGIN @27
+  REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~dexmod.2da~ @1000
+
+  COPY ~iiTweak/2da/dexmod.2da~ ~override/dexmod.2da~
+
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Remove effects of strength
+BEGIN @28
+
+  COPY ~iiTweak/2da/strmod.2da~ ~override/strmod.2da~
+
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Remove effects of strength-extra
+BEGIN @29
+
+  COPY ~iiTweak/2da/strmodex.2da~ ~override/strmodex.2da~
+
+
+// ------------------------------------------------------------------------------------------------------------------------
+// Remove effects of charisma
+BEGIN @30
+
+  COPY ~iiTweak/2da/chrmodst.2da~ ~override/chrmodst.2da~

@@ -1,4 +1,4 @@
-iiTweak 7.1
+iiTweak 8.1
 -----------
 
 +) Contents
@@ -18,7 +18,7 @@ iiTweak 7.1
 
 +) Section 2. (un)Installation
 ==============================
-  To install, simply unzip the archive, named in the form iiTweak(xx).zip [where (xx) represents the release version], to the main game directory (i.e. where you installed BG1,BG2,IWD1 or IWD2), run the  Setup-iiTweak.exe file, and follow the prompts.
+  To install, simply unzip the archive, named in the form iiTweak(xx).zip [where (xx) represents the release version], to the main game directory (i.e. where you installed BG1,BG2,PST,IWD1 or IWD2), run the  Setup-iiTweak.exe file, and follow the prompts.
 
   To uninstall, simply run the Setup-iiTweak.exe file and follow the prompts (choosing the Uninstall option).
 
@@ -89,6 +89,23 @@ T) All stores buy stolen goods
 U) All stores buy all item types
       This component ensures that all store keepers will buy good of all types (this affects container items too).
 
+V) Remove effects of intoxication
+      This component does not remove intoxication, though it does remove the effects (i.e. the morale bonus and luck penalty are removed, though the portrait icon remains).
+
+W) Remove effects of luck
+      This component removes the effects of luck. This will affect intoxication and several spells.
+
+X) Remove effects of dexterity [Not IWDII]
+      This component removes the effects of dexterity, i.e. bonuses and penalties to reaction, missile and AC values based on the dexterity stat.
+
+Y) Remove effects of strength
+      This component removes the effects of strength, i.e. bonuses and penalties to to-hit, damage and door bashing. This component does not change the weight allowance of characters (as derived from their strenght stat).
+
+Z) Remove effects of strength-extra
+      This component removes the effects of strength extra (18/xx), i.e. bonuses and penalties to to-hit, damage, door bashing and weight allowance.
+
+AA) Remove effects of charisma
+      This component removes the effects of charisma, i.e. bonuses prices in stores.	  
 
 +) Section 4. Known Issues
 ==========================
@@ -99,6 +116,18 @@ If you find any errors, please let me know immediately, specifying as much as yo
 
 +) Section 5. Version History
 =============================
+V8.1 [05/09/2021]
+ - Maintenace release RE: mod packaging  
+
+V8 [22/07/2007]
+  - Added 'Remove effects of intoxication' component
+  - Added 'Remove effects of luck' component
+  - Added 'Remove effects of dexterity' component
+  - Added 'Remove effects of strength' component
+  - Added 'Remove effects of strength-extra' component
+  - Added 'Remove effects of charisma' component
+  - Added Spanish translation
+
 V7.1 [05/09/2021]
  - Maintenace release RE: mod packaging
 
@@ -118,6 +147,7 @@ V6 [19/11/2006]
 iiTweak would have taken a lot longer to produce without:
   + IESDP - http://iesdp.gibberlings3.net/
   + WeiDU - http://www.weidu.org
+  + Januszka - Spanish Translation
 
 
 +) Section 7. Contact Details

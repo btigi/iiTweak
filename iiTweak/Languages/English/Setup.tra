@@ -22,7 +22,15 @@
 @22 = ~Cursed item equipped~
 @23 = ~All stores buy stolen goods~
 @24 = ~All stores buy all item types~
+@25 = ~Remove effects of intoxication~
+@26 = ~Remove effects of luck~
+@27 = ~Remove effects of dexterity~
+@28 = ~Remove effects of strength~
+@29 = ~Remove effects of strength-extra~
+@30 = ~Remove effects of charisma~
 
 @100 = ~View Readme~
 @101 = ~Show readme after installation~
 @102 = ~Do not show readme after installation~
+
+@1000 = ~Component not suitable for this game~

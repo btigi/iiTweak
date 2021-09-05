@@ -1,0 +1,36 @@
+@1   = ~Sin exclusión de escuelas~ 
+@2   = ~Sin excusión de objetos~
+@3   = ~Mismo oro de inicio~ 
+@4   = ~Coste de Revivir a los muertos.~
+@5   = ~Clases sin requisitos~ 
+@6   = ~Clases sin modificadores~
+@7   = ~Clase dual sin requisitos en la clase resultante~
+@8   = ~Clase dual sin requisitos en la clase de inicio~ 
+@9   = ~Razas sin modificadores de ventaja~
+@10  = ~Razas sin requisitos de características~ 
+@11  = ~Clases sin restricciones de alineamiento~
+@12  = ~Recompensa por Abrir cerraduras - 0 PE~
+@13  = ~Recompensa por Desactivar trampas - 0 PE~ 
+@14  = ~Recompensa por Aprender conjuros -  0 PE~
+@15  = ~Conjuro de Laberinto restaurado~ 
+@16  = ~Objetos sin requerimientos de estadísticas~
+@17  = ~Áreas totalmente exploradas~
+@18  = ~Objetos con peso 0~
+@19  = ~Quitar etiqueta de objeto maldito (quitar línea de información)~ 
+@20  = ~Quitar etiqueta de objeto maldito (mantener línea de información)~
+@21  = ~Tweak de objeto maldito~ 
+@22  = ~Objeto maldito equipado~ 
+@23  = ~Todas las tiendas compran objetos robados~
+@24  = ~Todas las tiendas compran todo tipo de objetos~ 
+@25  = ~Quitar los efectos de la intoxicación~
+@26  = ~Quitar los efectos de Suerte~
+@27  = ~Quitar los efectos de Destreza~
+@28  = ~Quitar los efectos de Fuerza~
+@29  = ~Quitar los efectos de Fuerza-extra~
+@30  = ~Quitar los efectos de Carisma~
+
+@100 = ~Ver Léeme (en inglés)~
+@101 = ~Mostrar el léeme al terminar la instalación~
+@102 = ~No mostrar el léeme al terminar la instalación~
+
+@1000 = ~Componente no adecuado para este juego~
