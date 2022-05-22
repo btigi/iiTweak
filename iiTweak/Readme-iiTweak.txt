@@ -152,7 +152,4 @@ iiTweak would have taken a lot longer to produce without:
 
 +) Section 7. Contact Details
 =============================
-Feedback, comments, queries, questions and suggestion should be sent to bt_igi / igi (Marc Wrench)
-E-mail: igi@mcwrench.com
-WWW   : http://www.teambg.eu
-WWW   : http://www.mcwrench.com
+Feedback, comments, queries, questions and suggestion should be sent to igi / bt_igi / iggti
